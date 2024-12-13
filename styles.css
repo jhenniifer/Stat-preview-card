@@ -1,0 +1,134 @@
+:root{
+    --main-background: hsl(233, 47%, 7%);
+    --card-background: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --main-heading: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+    --inter: "Inter", sans-serif;
+    --lexend: "Lexend Deca", sans-serif;
+    --fw-large:700;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--inter);
+}
+
+body{
+    background-color: var(--main-background);
+}
+
+.card__container{
+    width: 90%;
+    margin: auto;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 950px;
+}
+
+img{
+    object-fit: contain;
+    opacity: .4;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.image__container{
+    background-color: var(--accent);  
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px; 
+}
+
+.card__Info{
+    background-color: var(--card-background);
+    padding: 1.9em;
+    text-align: center;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+
+.card__head{
+    font-size: 1.7rem;
+    font-weight: var(--fw-large);
+    color: var(--main-heading);
+    margin-bottom: 20px;
+}
+
+.head--purple{
+    color: var(--accent);
+}
+
+.card__paragraph{
+    color: var(--main-paragraph);
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+
+.stats{
+    margin-top: 1.5em;
+}
+
+.stat__num{
+    font-size: 1.3em;
+    font-weight: var(--fw-large);
+}
+
+.stat__details{
+    color: var(--main-paragraph);
+    font-family: var(--lexend);
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+@media (min-width: 600px) {
+
+    .image__container{grid-area: right;}
+    .card__Info{grid-area: left;}
+
+    .card__container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        'left right'
+        ;
+        width: 70%;
+    }
+
+    img{
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 10px;
+        object-fit: cover;
+        min-height: 100%;
+
+    }
+    
+    .image__container{
+        border-top-left-radius: 0; 
+        border-bottom-right-radius: 10px;
+    }
+    
+    .card__Info{
+        text-align: start;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        padding: 2em;
+    
+    }
+
+    .card__head{
+        font-size: 2rem;
+    }
+
+    .stats__container{
+        display: flex;
+        justify-content: space-between;
+    }
+}
