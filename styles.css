@@ -88,7 +88,7 @@ img{
     font-size: 11px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
 
     .image__container{grid-area: right;}
     .card__Info{grid-area: left;}
